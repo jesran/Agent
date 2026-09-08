@@ -1,0 +1,15 @@
+import os, urllib.parase, urllib.request, render_template
+from app.youtube import youtube_bp
+
+Gemini_api_key = "Gemini_api_key"
+
+def home():
+  return render_template("index.html")
+
+def create_app():
+  app = Flask(__name__)
+  app.register_blueprint(youtube_bp, url_prefix="/youtube")
+  @app.route("/html")
+  def html():
+    return render_template("index.html")
+  return app
