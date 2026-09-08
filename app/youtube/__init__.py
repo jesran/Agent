@@ -22,7 +22,7 @@ def play():
   ).strip()
 
   if not command:
-    return jsonify{
+    return jsonify({
       "success":"False",
       "message":"There is no video name mentioned"
-    }400
+    })400
