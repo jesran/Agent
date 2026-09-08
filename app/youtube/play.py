@@ -45,3 +45,16 @@ for pattern in patterns:
   if match:
     query = match.group(1)
     break
+
+query = query.strip()
+
+video_id = get_vid(query)
+
+if not video_id:
+  return None
+
+return (
+  "https://www.youtube.com/embed/"
+  + video_id
+  + "?autoplay=1&mute=0"
+)
